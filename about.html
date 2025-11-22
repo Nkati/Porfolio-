@@ -10,110 +10,132 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 
     <style>
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        body {
-            font-family: 'Roboto', sans-serif;
-            background-color: #f4f4f4;
-            color: #333;
-        }
+/* Body */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
 
-        
-        header {
-            background-color: #007bff;
-            color: #fff;
-            padding: 20px 0;
-            text-align: center;
-        }
+/* Header */
+header {
+    background-color: #007bff;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
 
-       
-        nav {
-            display: flex;
-            justify-content: center;
-            background-color: #333;
-        }
+/* Navigation */
+nav {
+    display: flex;
+    justify-content: center;
+    background-color: #333;
+    flex-wrap: wrap; /* ensures nav links wrap on small screens */
+}
 
-        nav a {
-            color: #fff;
-            padding: 15px 20px;
-            text-decoration: none;
-            display: inline-block;
-        }
+nav a {
+    color: #fff;
+    padding: 15px 20px;
+    text-decoration: none;
+    display: inline-block;
+}
 
-        nav a:hover {
-            background-color: #575757;
-        }
+nav a:hover {
+    background-color: #575757;
+}
 
-        .container {
-            max-width: 960px;
-            margin: 40px auto;
-            padding: 0 20px;
-            display: flex;
-            gap: 40px;
-            align-items: center;
-        }
-        .text-section {
-            flex: 1;
-        }
-        .text-section h1 {
-            font-size: 2.5em;
-            margin-bottom: 0.5em;
-            color: #007bff;
-        }
-        .about-me {
-            flex: 1;
-        }
+/* Main container */
+.container {
+    max-width: 960px;
+    margin: 40px auto;
+    padding: 0 20px;
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+    flex-wrap: wrap; /* allows stacking on smaller screens */
+}
 
-        .about-me h1 {
-            font-size: 2.5em;
-            margin-bottom: 0.5em;
-            color: #007bff;
-        }
+/* Text section */
+.text-section, .about-me {
+    flex: 1 1 100%; /* full width on small screens */
+}
 
-        .about-me p {
-            font-size: 1.2em;
-            color: #555;
-            line-height: 1.6;
-            margin-bottom: 20px;
-        }
+.text-section h1,
+.about-me h1 {
+    font-size: 2.5em;
+    margin-bottom: 0.5em;
+    color: #007bff;
+}
 
-       
-        .profile-image {
-            width: 350px;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-        }
+/* Paragraphs */
+.about-me p {
+    font-size: 1.2em;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
 
-       
-        .btn-primary {
-            background-color: #007bff;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            text-decoration: none;
-            font-size: 1em;
-        }
+/* Profile image */
+.profile-image {
+    width: 100%;
+    max-width: 350px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    display: block;
+    margin: 0 auto;
+}
 
-        .btn-primary:hover {
-            background-color: #0056b3;
-        }
-        
-        footer {
-            margin-top: 40px;
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 15px;
-            font-size: 0.9em;
-        }
-    </style>
+/* Button */
+.btn-primary {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 1em;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+/* Footer */
+footer {
+    margin-top: 40px;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    font-size: 0.9em;
+}
+
+/* Responsive: Tablets and phones */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .text-section, .about-me {
+        flex: 1 1 100%;
+    }
+    .about-me h1, .text-section h1 {
+        font-size: 2em;
+    }
+    .about-me p {
+        font-size: 1.1em;
+    }
+}
+</style>
+
 </head>
 
 <body>
